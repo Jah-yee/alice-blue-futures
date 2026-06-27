@@ -308,7 +308,7 @@ try:
         crude_symbol = cfg.get("info", "crude_symbol")
 
 except Exception as ex:
-    iLog("Loading previous day data, Exception occured = " + str(ex),3)
+    iLog("Loading previous day data, Exception occurred = " + str(ex),3)
 
 
 
@@ -401,7 +401,7 @@ def savedata(flgUpdateConfigFile=True):
                 configfile.close()
 
     except Exception as ex:
-        iLog("In savedata(). Exception occured = " + str(ex),3)
+        iLog("In savedata(). Exception occurred = " + str(ex),3)
 
 def squareOff_MIS(buy_sell,ins_scrip,qty, order_type = OrderType.Market, limit_price=0.0):
     '''Square off MIS positions at EoD or when mtm limit is reached. Also used for placing Market orders. 
@@ -435,7 +435,7 @@ def squareOff_MIS(buy_sell,ins_scrip,qty, order_type = OrderType.Market, limit_p
         iLog(strMsg,6,sendTeleMsg=True)
     
     except Exception as ex:
-        iLog("Exception occured in squareOff_MIS():"+str(ex),3)
+        iLog("Exception occurred in squareOff_MIS():"+str(ex),3)
 
     return ord_obj
 
@@ -459,10 +459,10 @@ def buy_signal(ins_scrip,qty,limit_price,stop_loss_abs,target_abs,trailing_sl_ab
                          trailing_sl = trailing_sl_abs,
                          is_amo = False)
     except Exception as ex:
-            # print("Exception occured in buy_signal():",ex,flush=True)
+            # print("Exception occurred in buy_signal():",ex,flush=True)
             #ord_obj={'status': 'error'} not required as api gives this in case of actual error
     #print("buy_signal():ins_scrip,qty,limit_price,stop_loss_abs,target_abs,trailing_sl_abs:",ins_scrip,qty,limit_price,stop_loss_abs,target_abs,trailing_sl_abs,flush=True)
-            iLog("Exception occured in buy_signal():"+str(ex),3)
+            iLog("Exception occurred in buy_signal():"+str(ex),3)
 
     return ord_obj
 
@@ -482,8 +482,8 @@ def sell_signal(ins_scrip,qty,limit_price,stop_loss_abs,target_abs,trailing_sl_a
                          is_amo = False)
           
     except Exception as ex:
-            # print("Exception occured in sell_signal():",ex,flush=True)
-            iLog("Exception occured in sell_signal():"+str(ex),3)
+            # print("Exception occurred in sell_signal():",ex,flush=True)
+            iLog("Exception occurred in sell_signal():"+str(ex),3)
     #print("sell_signal():ins_scrip,qty,limit_price,stop_loss_abs,target_abs,trailing_sl_abs:",ins_scrip,qty,limit_price,stop_loss_abs,target_abs,trailing_sl_abs,flush=True)
     
     return ord_obj
